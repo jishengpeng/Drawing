@@ -26,7 +26,7 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
     FONTSIZE = 22
     width = 0.2
     y = np.array([[68.33,	98.57], [99.94,	100.00],
-                  [98.73	,99.99]])
+                  [98.79	,99.99]])
     # x_labels = ['DGA', 'LA_Mul07', 'CNN+LSTM','Elixir']
     # legend_labels = ['Accuracy', 'Precision', 'Recall','F1-score']
     x_labels = ['DGA', 'DNS', 'IOT']
