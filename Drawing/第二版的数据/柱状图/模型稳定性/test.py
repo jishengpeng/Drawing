@@ -29,20 +29,20 @@ def bar_plot(x_label='Sketches', y_label='Accuracy(%)'):
                   [99.30,98.79,99.27,99.99],[91.53,79.152,92.62,93.97],[94.68,89.01,94.95,95.36],[97.61,97.53,97.03,97.71]])
     # x_labels = ['DGA', 'LA_Mul07', 'CNN+LSTM','Elixir']
     # legend_labels = ['Accuracy', 'Precision', 'Recall','F1-score']
-    x_labels = ['DGA Family', 'DNS Tunnel', 'IOT Attack','Traffic Service','Anomaly','Traffic Application']
+    x_labels = ['DGA Family', 'DNS Tunnel', 'IoT Attack','Traffic Service','Anomaly','Traffic Application']
     legend_labels = ['RNN','DNN','CNN', 'Loong']
     x = np.arange(len(x_labels))
 
     fig, ax = plt.subplots(figsize=(6.5,3.5))
     #画几个颜色的柱状图
     ax.bar(x - 1.5*width, y[:, 0], width=width, label=legend_labels[0], color='white',
-           ec=COLORS[1], hatch=HATCH[2] * 4, linewidth=ALLWIDTH)
+           ec=COLORS[1], hatch=HATCH[1] * 2, linewidth=ALLWIDTH)
     ax.bar(x-0.5*width, y[:, 1], width=width, label=legend_labels[1], color='white',
            ec=COLORS[5], hatch=HATCH[2] * 4, linewidth=ALLWIDTH)
     ax.bar(x+0.5*width, y[:, 2], width=width, label=legend_labels[2], color='white',
-           ec=COLORS[3], hatch=HATCH[2] * 4, linewidth=ALLWIDTH)
+           ec=COLORS[3], hatch=HATCH[5] * 2, linewidth=ALLWIDTH)
     ax.bar(x + 1.5*width, y[:, 3], width=width, label=legend_labels[3], color='white',
-           ec=COLORS[7], hatch=HATCH[2] * 4, linewidth=ALLWIDTH)
+           ec=COLORS[9], hatch=HATCH[4] * 4, linewidth=ALLWIDTH)
 
 
     ax.set_xticks(x)

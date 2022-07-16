@@ -36,8 +36,8 @@ def plot_Matrix(classes, title=None, cmap=plt.cm.YlGnBu):
            yticks=np.arange(cm.shape[0]),
            xticklabels=classes, yticklabels=classes,
            title=title,
-           ylabel='Actual',
-           xlabel='Predicted'
+           ylabel='Actual label',
+           xlabel='Predicted label'
            )
 
     # 将x轴上的lables旋转45度
@@ -45,7 +45,7 @@ def plot_Matrix(classes, title=None, cmap=plt.cm.YlGnBu):
 
     fig.tight_layout()
     # plt.savefig('DGADARTS.jpg', dpi=300)
-    pp = PdfPages('DNS混淆矩阵Exilir' + '.pdf')
+    pp = PdfPages('DNS混淆矩阵LSTM' + '.pdf')
     plt.savefig(pp, format='pdf', bbox_inches='tight')
     pp.close()
     plt.show()

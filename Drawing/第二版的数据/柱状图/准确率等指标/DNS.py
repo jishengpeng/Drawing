@@ -26,7 +26,7 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
     FONTSIZE = 22
     width = 0.2
     y=np.array([[99.94,99.94,99.94,99.94],[99.99,99.99,99.99,99.99],[99.93,99.93,99.93,99.93],[100,100,100,100]])
-    x_labels = ['DNN', 'LSTM', 'CNN','Loong']
+    x_labels = ['DNN1', 'LSTM', 'BCNN','Loong']
     legend_labels = ['Accuracy', 'Precision', 'Recall','F1-score']
     x = np.arange(len(x_labels))
 
@@ -41,7 +41,7 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
            ec=COLORS[9], hatch=HATCH[4] * 4, linewidth=ALLWIDTH)
 
     ax.set_xticks(x)
-    ax.set_xticklabels(x_labels,fontsize = 'small',rotation = 30)
+    ax.set_xticklabels(x_labels,fontsize = 'small')
     # ax.set_xlabel(x_label, fontsize=FONTSIZE)
     ax.set_ylabel(y_label, fontsize=FONTSIZE)
     # plt.yscale('log')

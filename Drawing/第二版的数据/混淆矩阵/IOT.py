@@ -32,7 +32,7 @@ def plot_Matrix(classes, title=None, cmap=plt.cm.YlGnBu):
               [0, 0, 0, 16519, 0],
               [0, 0, 15, 0, 0]]
 
-    cm=np.array(DNN)
+    cm=np.array(Exilir)
     # 按行进行归一化
     cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis] * 100
     print("Normalized confusion matrix")
@@ -56,8 +56,8 @@ def plot_Matrix(classes, title=None, cmap=plt.cm.YlGnBu):
            yticks=np.arange(cm.shape[0]),
            xticklabels=classes, yticklabels=classes,
            title=title,
-           ylabel='Actual',
-           xlabel='Predicted'
+           ylabel='Actual label',
+           xlabel='Predicted label'
            )
 
     # 将x轴上的lables旋转45度
@@ -65,9 +65,9 @@ def plot_Matrix(classes, title=None, cmap=plt.cm.YlGnBu):
 
     fig.tight_layout()
     # plt.savefig('DGADARTS.jpg', dpi=300)
-    pp = PdfPages('IOT混淆矩阵DNN' + '.pdf')
+    pp = PdfPages('IOT混淆矩阵Loong' + '.pdf')
     plt.savefig(pp, format='pdf', bbox_inches='tight')
     pp.close()
     plt.show()
 
-plot_Matrix(['DoS','DDos','Normal','Recon','Theft'])
+plot_Matrix(['DoS','DDoS','Normal','Recon','Theft'])
