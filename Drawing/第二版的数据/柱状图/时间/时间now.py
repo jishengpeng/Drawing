@@ -74,7 +74,7 @@ def bar1_plot():
     y_major_locator = MultipleLocator(5)
     ax = plt.gca()
     ax.yaxis.set_major_locator(y_major_locator)
-    ax.tick_params(labelsize=FONTSIZE - 4)
+    ax.tick_params(labelsize=FONTSIZE)
     plt.tick_params(axis='both', which='both', length=0)
     ax.grid(linestyle=':', axis='y')
     # ax.ticklabel_format(style='sci', scilimits=(0, 1), axis='y', useMathText=True)

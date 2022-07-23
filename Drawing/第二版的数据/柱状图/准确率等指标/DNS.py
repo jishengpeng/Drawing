@@ -14,7 +14,7 @@ config = {
 }  #设置一些字体和大小
 
 matplotlib.rc('pdf', fonttype=42)
-FONTSIZE = 29
+
 ALLWIDTH = 1.5
 Marker = ['o', 'v', '8', 's', 'p', '^', '<', '>', '*', 'h', 'H', 'D', 'd', 'P', 'X']
 HATCH = ['+', 'x', '/', 'o', '|', '\\', '-', 'O', '.', '*']
@@ -23,7 +23,7 @@ COLORS = sns.color_palette("Paired")
 rcParams.update(config)
 
 def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
-    FONTSIZE = 22
+    FONTSIZE = 15
     width = 0.2
     y=np.array([[99.94,99.94,99.94,99.94],[99.99,99.99,99.99,99.99],[99.93,99.93,99.93,99.93],[100,100,100,100]])
     x_labels = ['DNN1', 'LSTM', 'BCNN','Loong']
@@ -41,7 +41,7 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
            ec=COLORS[9], hatch=HATCH[4] * 4, linewidth=ALLWIDTH)
 
     ax.set_xticks(x)
-    ax.set_xticklabels(x_labels,fontsize = 'small')
+    ax.set_xticklabels(x_labels,fontsize = FONTSIZE)
     # ax.set_xlabel(x_label, fontsize=FONTSIZE)
     ax.set_ylabel(y_label, fontsize=FONTSIZE)
     # plt.yscale('log')
@@ -49,10 +49,10 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
     y_major_locator = MultipleLocator(0.05)
     ax = plt.gca()
     ax.yaxis.set_major_locator(y_major_locator)
-    ax.tick_params(labelsize=FONTSIZE - 5)
+    ax.tick_params(labelsize=FONTSIZE)
     plt.tick_params(axis='both', which='both', length=0)
     ax.grid(linestyle=':', axis='y')
-    fig.legend(fontsize=FONTSIZE - 8.5, loc='upper left', ncol=4,
+    fig.legend(fontsize=FONTSIZE, loc='upper left', ncol=4,
                handlelength=ALLWIDTH, handletextpad=0.4, columnspacing=1, frameon=True, shadow=True, bbox_to_anchor=(0.21, 0.92))
     plt.tight_layout()
 

@@ -14,7 +14,6 @@ config = {
 }  #设置一些字体和大小
 
 matplotlib.rc('pdf', fonttype=42)
-FONTSIZE = 29
 ALLWIDTH = 1.5
 Marker = ['o', 'v', '8', 's', 'p', '^', '<', '>', '*', 'h', 'H', 'D', 'd', 'P', 'X']
 HATCH = ['+', 'x', '/', 'o', '|', '\\', '-', 'O', '.', '*']
@@ -23,10 +22,10 @@ COLORS = sns.color_palette("Paired")
 rcParams.update(config)
 
 def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
-    FONTSIZE = 22
+    FONTSIZE = 18
     width = 0.2
     y = np.array([[87.01,	78.92,	87.01,82.58], [96.94,	96.90,	96.94,	96.90],
-                  [94.73	,91.65,	94.73	,93.09],[97.94,	97.91	,97.94,	97.92]])
+                  [94.73,91.65,	94.73 ,93.09],[97.94,	97.91	,97.94,	97.92]])
     x_labels = ['BiLSTM', 'LA_Mul07', 'CLSTM','Loong']
     legend_labels = ['Accuracy', 'Precision', 'Recall','F1-score']
     x = np.arange(len(x_labels))
@@ -42,19 +41,19 @@ def bar_plot(x_label='Sketches', y_label='Metrics(%)'):
            ec=COLORS[9], hatch=HATCH[4] * 4, linewidth=ALLWIDTH)
 
     ax.set_xticks(x)
-    ax.set_xticklabels(x_labels,fontsize = 'small')
+    ax.set_xticklabels(x_labels,fontsize =FONTSIZE)
     # ax.set_xlabel(x_label, fontsize=FONTSIZE)
     ax.set_ylabel(y_label, fontsize=FONTSIZE)
     # plt.yscale('log')
-    plt.ylim(70, 110)
+    plt.ylim(70, 100)
     y_major_locator = MultipleLocator(10)
     ax = plt.gca()
     ax.yaxis.set_major_locator(y_major_locator)
-    ax.tick_params(labelsize=FONTSIZE - 5)
+    ax.tick_params(labelsize=FONTSIZE)
     plt.tick_params(axis='both', which='both', length=0)
     ax.grid(linestyle=':', axis='y')
-    fig.legend(fontsize=FONTSIZE - 9.5, loc='upper left', ncol=4,
-               handlelength=ALLWIDTH, handletextpad=0.4, columnspacing=1, frameon=True, shadow=True, bbox_to_anchor=(0.20, 0.92))
+    # fig.legend(fontsize=FONTSIZE, loc='upper left', ncol=4,
+    #            handlelength=ALLWIDTH, handletextpad=0.4, columnspacing=1, frameon=True, shadow=True, bbox_to_anchor=(0.12, 0.92))
     plt.tight_layout()
 
     # plt.rc('font', family='SimHei', size=12)
